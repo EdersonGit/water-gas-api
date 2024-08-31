@@ -1,5 +1,5 @@
 # Estágio de desenvolvimento
-FROM node:16 AS development
+FROM node:20 AS development
 WORKDIR /app
 
 # Copia o package.json e package-lock.json
@@ -10,7 +10,7 @@ RUN npm install
 COPY . .
 
 # Estágio de produção
-FROM node:16-alpine AS production
+FROM node:20-alpine AS production
 WORKDIR /app
 
 # Copia apenas os arquivos necessários do estágio de desenvolvimento
